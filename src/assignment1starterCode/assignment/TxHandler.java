@@ -1,7 +1,7 @@
 package assignment1starterCode.assignment;
 
 public class TxHandler {
-    private UTXOPool utxoPool;
+    public UTXOPool utxoPool;
     /**
      * Creates a public ledger whose current UTXOPool (collection of unspent transaction outputs) is
      * {@code utxoPool}. This should make a copy of utxoPool by using the UTXOPool(UTXOPool uPool)
@@ -14,7 +14,7 @@ public class TxHandler {
 
     /**
      * @return true if:
-     * (1) all outputs claimed by {@code tx} are in the current UTXO pool, 
+     * (1) all outputs claimed(要求) by {@code tx} are in the current UTXO pool,
      * (2) the signatures on each input of {@code tx} are valid, 
      * (3) no UTXO is claimed multiple times by {@code tx},
      * (4) all of {@code tx}s output values are non-negative, and
@@ -23,8 +23,15 @@ public class TxHandler {
      */
     public boolean isValidTx(Transaction tx) {
         // IMPLEMENT THIS
-        for(tx.getOutputs()
-        return utxoPool.contains(tx);
+        boolean isValid = true;
+        boolean validOutputs[] = new boolean[tx.getOutputs().size()];
+
+        for( boolean b : validOutputs)
+            b = false;
+        for( int i = 0; i < tx.getOutputs().size(); i++){
+
+        }
+        return isValid;
     }
 
     /**
